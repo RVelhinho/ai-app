@@ -12,8 +12,8 @@ export default class Simulator extends Component {
                     </div>
                 </div>
                 <div className="row h-25">
-                    <div className="col d-flex justify-content-center"><img src={mic}/></div>
-                    <div className="col d-flex justify-content-center"><img src={door}/></div>
+                    <div className="col d-flex justify-content-center"><img src={mic} alt="mic"/></div>
+                    <div className="col d-flex justify-content-center"><img src={door} alt="door"/></div>
                 </div>
             </React.Fragment>
         )

@@ -1,23 +1,27 @@
-.initial-height{
+.initial-height {
     height: 100vh;
 }
 
-.bubble, hr.separator{
-    border: 2px solid #1a1a1a;
-    border-radius: 25px;
+.bubble {
+    border: 2px solid #3c72ff;
+    border-radius: 50px;
 }
 
-ul#menu li{
+hr.separator {
+    border: 5px solid #3c72ff;
+    border-radius: 50px;
+}
+
+ul#menu li {
     display: inline;
 }
 
-.divider{
+.divider {
     height: 100%;
     width: 1%;
-    margin-left: 2%;
-    background-color: #1a1a1a;
+    background-color: #3c72ff;
 }
 
-.row-dots{
+.row-dots {
     height: 10%;
 }

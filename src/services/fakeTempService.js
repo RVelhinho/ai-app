@@ -1,8 +1,8 @@
 export const temps = [
-    {name: "Fridge", degrees: 2},
-    {name: "Freezer", degrees: 2}
+    { name: "Fridge temperature", degrees: 2 },
+    { name: "Freezer temperature", degrees: -2 },
 ];
 
-export function getTemp(){
+export function getTemp() {
     return temps;
 }
