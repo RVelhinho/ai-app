@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class NotFound extends Component {
     render() {
@@ -6,6 +7,6 @@ export default class NotFound extends Component {
             <React.Fragment>
                 <h1>Not Found</h1>
             </React.Fragment>
-        )
+        );
     }
 }

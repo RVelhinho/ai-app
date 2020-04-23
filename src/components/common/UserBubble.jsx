@@ -1,6 +1,6 @@
 import React from "react";
+import OpenClose from "./OpenClose";
 import "../style/bubble.css";
-import { faSortDown } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -27,13 +27,13 @@ export default function UserBubble({
                     </div>
                     <div className="col d-flex align-items-center justify-content-end">
                         <FontAwesomeIcon icon={faUser} size="5x" />
-                        <FontAwesomeIcon icon={faSortDown} size="3x" />
+                        <OpenClose showUsers={showUsers} />
                     </div>
                 </div>
                 {showUsers &&
                     usersOld.map((user) => (
                         <React.Fragment key={user.name}>
-                            <hr className="my-3" />
+                            <hr className="my-3 separator2" />
                             <div
                                 className="row w-100 pl-4 my-3"
                                 onClick={() => onChangeUser(user.name)}
@@ -44,7 +44,7 @@ export default function UserBubble({
                                 </div>
                             </div>
                         </React.Fragment>
-                    ))}
+                    ))}{" "}
             </div>
         </React.Fragment>
     );

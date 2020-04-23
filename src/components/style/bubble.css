@@ -12,6 +12,11 @@ hr.separator {
     border-radius: 50px;
 }
 
+hr.separator2 {
+    border: 2px solid #3c72ff;
+    border-radius: 50px;
+}
+
 ul#menu li {
     display: inline;
 }
@@ -24,4 +29,8 @@ ul#menu li {
 
 .row-dots {
     height: 10%;
+}
+
+.rs {
+    height: 230%;
 }

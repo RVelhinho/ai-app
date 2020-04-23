@@ -5,8 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../style/bubble.css";
 
 export default function Favorite({ favorite, onClickFavorite }) {
-    let classes = farStar;
-    if (favorite) classes = fasStar;
+    let classes = favorite ? fasStar : farStar;
     return (
         <FontAwesomeIcon
             icon={classes}

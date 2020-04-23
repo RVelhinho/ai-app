@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MainPage from "./components/MainPage";
+import PreferencesPage from "./components/PreferencesPage";
 import NotFound from "./components/NotFound";
 import { getTemp } from "./services/fakeTempService";
 import { getFood } from "./services/fakeFoodService";
 import { getRecipes } from "./services/fakeRecipeService";
 import { getUsers } from "./services/fakeUserService";
+import { getPreferences } from "./services/fakePreferenceService";
 
 export default class App extends Component {
     state = {
@@ -16,6 +18,7 @@ export default class App extends Component {
         recipesOriginal: [],
         recipes: [],
         users: [],
+        preferences: [],
         currentUser: "",
         currentUserIndex: 0,
         showUsers: false,
@@ -26,6 +29,7 @@ export default class App extends Component {
         const foods = getFood();
         const recipes = getRecipes();
         const users = getUsers();
+        const preferences = getPreferences();
         let currentUser = users[0].name;
         let currentUserIndex = 0;
         for (let user of recipes) {
@@ -39,6 +43,7 @@ export default class App extends Component {
             recipesOriginal: recipes,
             recipes: recipes[currentUserIndex].recipes,
             users,
+            preferences,
             currentUser,
             currentUserIndex,
         });
@@ -102,10 +107,29 @@ export default class App extends Component {
         currentPage--;
         this.setState({ currentPage });
     };
+    handleCheckClick = (pref) => {
+        const preferences = [...this.state.preferences];
+        const index = preferences.indexOf(pref);
+        preferences[index] = {
+            ...preferences[index],
+        };
+        preferences[index].check = !preferences[index].check;
+        this.setState({ preferences });
+    };
     render() {
         return (
             <React.Fragment>
                 <Switch>
+                    <Route
+                        path="/preferences"
+                        render={(props) => (
+                            <PreferencesPage
+                                preferences={this.state.preferences}
+                                onCheckClick={this.handleCheckClick}
+                                {...props}
+                            />
+                        )}
+                    />
                     <Route path="/not-found" component={NotFound} />
                     <Route
                         path="/"

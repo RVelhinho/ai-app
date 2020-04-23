@@ -23,6 +23,7 @@ import { faBacon } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 export default class Fridge extends Component {
     chooseFood(name) {
@@ -34,6 +35,7 @@ export default class Fridge extends Component {
         else if (name === "Hamburguer") return faHamburger;
         else if (name === "Egg") return faEgg;
         else if (name === "Bacon") return faBacon;
+
         return faPizzaSlice;
     }
     chooseBar(quantity) {
@@ -49,6 +51,7 @@ export default class Fridge extends Component {
         );
         if (this.props.foodsLength === 0)
             return <p>There is no food available</p>;
+
         const foods = paginate(
             this.props.foods,
             this.props.currentPage,
@@ -87,7 +90,7 @@ export default class Fridge extends Component {
                         </div>
                         <hr className="separator mt-0" />
                         <div className="row h-50 mt-5">
-                            <div className="col d-flex justify-content-center">
+                            <div className="col d-flex justify-content-center align-items-center">
                                 {this.props.currentPage > 1 && (
                                     <FontAwesomeIcon
                                         icon={faAngleDoubleLeft}
@@ -100,7 +103,7 @@ export default class Fridge extends Component {
                                             this.props.onPreviousPage()
                                         }
                                     />
-                                )}
+                                )}{" "}
                             </div>
                             <div className="col">
                                 {array1.map((food) => (
@@ -111,7 +114,7 @@ export default class Fridge extends Component {
                                             </div>
                                         </div>
                                         <div className="row mb-3">
-                                            <div className="col d-flex justify-content-center">
+                                            <div className="col d-flex justify-content-end">
                                                 <FontAwesomeIcon
                                                     icon={this.chooseFood(
                                                         food.name
@@ -119,7 +122,7 @@ export default class Fridge extends Component {
                                                     size="3x"
                                                 />
                                             </div>
-                                            <div className="col d-flex justify-content-center">
+                                            <div className="col d-flex justify-content-start">
                                                 <h1>
                                                     <img
                                                         src={this.chooseBar(
@@ -142,7 +145,7 @@ export default class Fridge extends Component {
                                             </div>
                                         </div>
                                         <div className="row mb-3 ">
-                                            <div className="col d-flex justify-content-center">
+                                            <div className="col d-flex justify-content-end">
                                                 <FontAwesomeIcon
                                                     icon={this.chooseFood(
                                                         food.name
@@ -150,7 +153,7 @@ export default class Fridge extends Component {
                                                     size="3x"
                                                 />
                                             </div>
-                                            <div className="col d-flex justify-content-center">
+                                            <div className="col d-flex justify-content-start">
                                                 <h1>
                                                     <img
                                                         src={this.chooseBar(
@@ -164,7 +167,7 @@ export default class Fridge extends Component {
                                     </React.Fragment>
                                 ))}{" "}
                             </div>
-                            <div className="col d-flex justify-content-center">
+                            <div className="col d-flex justify-content-center align-items-center">
                                 {this.props.currentPage < pagesCount && (
                                     <FontAwesomeIcon
                                         icon={faAngleDoubleRight}
@@ -175,7 +178,7 @@ export default class Fridge extends Component {
                                         }}
                                         onClick={() => this.props.onNextPage()}
                                     />
-                                )}
+                                )}{" "}
                             </div>
                         </div>
                         <div className="row row-dots">
