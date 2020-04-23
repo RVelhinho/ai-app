@@ -9,6 +9,8 @@ import { getUsers } from "./services/fakeUserService";
 
 export default class App extends Component {
     state = {
+        pageSize: 6,
+        currentPage: 1,
         temps: [],
         foods: [],
         recipesOriginal: [],
@@ -45,21 +47,27 @@ export default class App extends Component {
     handleOnClickFavorite = (recipe) => {
         const recipes = [...this.state.recipes];
         const index = recipes.indexOf(recipe);
-        recipes[index] = { ...recipes[index] };
+        recipes[index] = {
+            ...recipes[index],
+        };
         recipes[index].favorite = !recipes[index].favorite;
         this.setState({ recipes });
     };
     handlePlusTemp = (temp) => {
         const temps = [...this.state.temps];
         const index = temps.indexOf(temp);
-        temps[index] = { ...temps[index] };
+        temps[index] = {
+            ...temps[index],
+        };
         temps[index].degrees++;
         this.setState({ temps });
     };
     handleMinusTemp = (temp) => {
         const temps = [...this.state.temps];
         const index = temps.indexOf(temp);
-        temps[index] = { ...temps[index] };
+        temps[index] = {
+            ...temps[index],
+        };
         temps[index].degrees--;
         this.setState({ temps });
     };
@@ -84,6 +92,16 @@ export default class App extends Component {
             showUsers: !this.state.showUsers,
         });
     };
+    handleNextPage = () => {
+        let currentPage = this.state.currentPage;
+        currentPage++;
+        this.setState({ currentPage });
+    };
+    handlePreviousPage = () => {
+        let currentPage = this.state.currentPage;
+        currentPage--;
+        this.setState({ currentPage });
+    };
     render() {
         return (
             <React.Fragment>
@@ -94,6 +112,8 @@ export default class App extends Component {
                         exact
                         render={(props) => (
                             <MainPage
+                                pageSize={this.state.pageSize}
+                                currentPage={this.state.currentPage}
                                 temps={this.state.temps}
                                 foods={this.state.foods}
                                 recipes={this.state.recipes}
@@ -107,6 +127,8 @@ export default class App extends Component {
                                 onMinusTemp={this.handleMinusTemp}
                                 onShowUsers={this.handleShowUsers}
                                 onChangeUser={this.handleChangeUser}
+                                onNextPage={this.handleNextPage}
+                                onPreviousPage={this.handlePreviousPage}
                                 {...props}
                             />
                         )}

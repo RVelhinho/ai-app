@@ -4,6 +4,8 @@ import Simulator from "./Simulator";
 import "./style/bubble.css";
 
 export default function MainPage({
+    pageSize,
+    currentPage,
     temps,
     foods,
     recipes,
@@ -17,6 +19,8 @@ export default function MainPage({
     onMinusTemp,
     onShowUsers,
     onChangeUser,
+    onNextPage,
+    onPreviousPage,
 }) {
     return (
         <React.Fragment>
@@ -24,6 +28,8 @@ export default function MainPage({
                 <div className="row initial-height">
                     <div className="col-8">
                         <Fridge
+                            pageSize={pageSize}
+                            currentPage={currentPage}
                             temps={temps}
                             foods={foods}
                             recipes={recipes}
@@ -37,6 +43,8 @@ export default function MainPage({
                             onMinusTemp={onMinusTemp}
                             onShowUsers={onShowUsers}
                             onChangeUser={onChangeUser}
+                            onNextPage={onNextPage}
+                            onPreviousPage={onPreviousPage}
                         />
                     </div>
                     <div className="divider"></div>

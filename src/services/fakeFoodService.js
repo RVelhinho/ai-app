@@ -5,6 +5,9 @@ export const foods = [
     { name: "Carrot", quantity: 7 },
     { name: "Pizza", quantity: 2 },
     { name: "Apple", quantity: 8 },
+    { name: "Hamburguer", quantity: 7 },
+    { name: "Egg", quantity: 5 },
+    { name: "Bacon", quantity: 4 },
 ];
 
 export function getFood() {
