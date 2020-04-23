@@ -1,3 +1,7 @@
+.initial-height{
+    height: 100vh;
+}
+
 .bubble, hr.separator{
     border: 2px solid #1a1a1a;
     border-radius: 25px;
@@ -5,4 +9,15 @@
 
 ul#menu li{
     display: inline;
+}
+
+.divider{
+    height: 100%;
+    width: 1%;
+    margin-left: 2%;
+    background-color: #1a1a1a;
+}
+
+.row-dots{
+    height: 10%;
 }

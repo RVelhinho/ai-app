@@ -1,16 +1,19 @@
 import React from 'react'
 import Fridge from './Fridge'
 import Simulator from './Simulator';
+import './style/bubble.css';
 
-export default function MainPage({temps, foods, recipes}) {
+export default function MainPage({temps, foods, recipes, foodsLength}) {
     return (
         <React.Fragment>
             <div className="container-fluid">
-                <div className="row">
+                <div className="row d-flex justify-content-center initial-height">
                     <div className="col-8">
-                        <Fridge temps={temps} foods={foods} recipes={recipes}/>
+                        <Fridge temps={temps} foods={foods} recipes={recipes} foodsLength={foodsLength}/>
                     </div>
-                    <div className="col-4">
+                    <div className="divider">
+                    </div>
+                    <div className="col-3">
                         <Simulator/>
                     </div>
                 </div>

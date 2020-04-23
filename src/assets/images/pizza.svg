@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   aria-hidden="true"
+   focusable="false"
+   data-prefix="fas"
+   data-icon="pizza-slice"
+   class="svg-inline--fa fa-pizza-slice fa-w-16"
+   role="img"
+   viewBox="0 0 60 60"
+   version="1.1"
+   id="svg2692"
+   sodipodi:docname="pizza.svg"
+   width="60"
+   height="60"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata2698">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2696" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview2694"
+     showgrid="false"
+     inkscape:zoom="0.4609375"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2692" />
+  <path
+     d="m 18.937093,-0.98709 c -1.924842,-0.18105 -3.716278,1.00292 -4.208208,2.87297 l -1.764041,6.7024 c 22.347693,0.65393 37.46532,15.55715 38.411065,37.75834 l 6.782206,-1.87958 c 1.872433,-0.51933 3.036152,-2.34411 2.813413,-4.2761 C 58.484481,18.65797 40.604659,1.05806 18.937093,-0.98709 Z M 11.972645,12.3534 0.07936574,57.55501 A 1.9307968,1.9307968 0 0 0 2.461595,59.90746 L 47.60484,47.38884 C 47.096234,26.55744 32.944601,12.59162 11.972645,12.35816 Z m 3.287477,36.19202 a 3.8115668,3.8115668 0 1 1 3.811567,-3.81157 3.8115668,3.8115668 0 0 1 -3.811567,3.81157 z m 5.71735,-18.10495 a 3.8115668,3.8115668 0 1 1 3.811567,-3.81156 3.8115668,3.8115668 0 0 1 -3.811567,3.81156 z m 12.387592,12.3876 a 3.8115668,3.8115668 0 1 1 3.811567,-3.81157 3.8115668,3.8115668 0 0 1 -3.811567,3.81157 z"
+     id="path2690"
+     inkscape:connector-curvature="0"
+     style="fill:currentColor;stroke-width:0.11911146" />
+</svg>

@@ -11,7 +11,7 @@ export default class App extends Component {
   state = {
     temps: [],
     foods: [],
-    recipes: []
+    recipes: [],
   }
 
   componentDidMount() {
@@ -25,7 +25,7 @@ export default class App extends Component {
       <React.Fragment>
         <Switch>
           <Route path='/not-found' component={NotFound}/>
-          <Route path='/' exact render={(props) => <MainPage temps={this.state.temps} foods={this.state.foods} recipes={this.state.recipes} {...props}/>}/>
+          <Route path='/' exact render={(props) => <MainPage temps={this.state.temps} foods={this.state.foods} recipes={this.state.recipes} foodsLength={this.state.foods.length}{...props}/>}/>
           <Redirect to='not-found'/>
         </Switch>
       </React.Fragment>
