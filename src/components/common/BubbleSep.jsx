@@ -5,10 +5,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class BubbleSep extends Component {
     render() {
+        const classes = this.props.showUsers
+            ? "col bubble mt-5 mb-3"
+            : "col bubble mt-4 mb-3";
         return (
             <React.Fragment>
-                <div className="col bubble my-4">
-                    <div className="row w-100 h-25 pl-4 py-3">
+                <div className={classes}>
+                    <div className="row w-100 pl-4 my-3">
                         <div className="col-7 col-xl-8 d-flex align-items-center justify-content-start justify-content-sm-center">
                             <h1 className="text1">{this.props.desc}</h1>
                         </div>
@@ -23,13 +26,13 @@ export default class BubbleSep extends Component {
                     {!this.props.showUsers && <hr className="my-3 separator" />}
                     {!this.props.showUsers &&
                         this.props.recipes.map((recipe) => (
-                            <div key={recipe.name} className="row">
-                                <div className="col-6 d-flex justify-content-start align-items-center pl-md-5 pl-lg-5">
+                            <div key={recipe.name} className="row w-100">
+                                <div className="col-7 col-sm-5 col-md-6 col-xl-7 d-flex justify-content-start align-items-center pl-md-5 pl-lg-5">
                                     <h5 className="textRecipe">
-                                        {recipe.name}
+                                        {recipe.name}{" "}
                                     </h5>
                                 </div>
-                                <div className="col d-flex justify-content-end align-items-center pr-md-5 pr-lg-5">
+                                <div className="col d-flex justify-content-end align-items-center">
                                     <Favorite
                                         favorite={recipe.favorite}
                                         onClickFavorite={() =>
@@ -38,7 +41,7 @@ export default class BubbleSep extends Component {
                                     />
                                 </div>
                             </div>
-                        ))}
+                        ))}{" "}
                 </div>
             </React.Fragment>
         );

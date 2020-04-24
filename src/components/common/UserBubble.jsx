@@ -12,13 +12,16 @@ export default function UserBubble({
     onShowUsers,
     onChangeUser,
 }) {
+    const classes = showUsers
+        ? "col bubble mb-5 mb-sm-3 mb-md-3 mb-xl-3 mt-3"
+        : "col bubble mb-5 mb-sm-3 mb-md-3 mb-xl-3 mt-3 d-flex align-items-center";
     let usersOld = [...users];
     usersOld.splice(currentUserIndex, 1);
     return (
         <React.Fragment>
-            <div className="col bubble mb-5 mb-sm-3 mb-md-3 mb-xl-3 mt-3 ">
+            <div className={classes}>
                 <div
-                    className="row w-100 pl-4 py-2 pt-sm-4 pt-md-5 pt-xl-5 mb-3"
+                    className="row w-100 pl-4 my-3"
                     onClick={onShowUsers}
                     style={{ cursor: "pointer" }}
                 >

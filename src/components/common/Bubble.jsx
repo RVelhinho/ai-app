@@ -8,7 +8,7 @@ export default function Bubble({ desc, icon }) {
         <React.Fragment>
             <Link
                 to="/preferences"
-                className="col bubble my-3 d-flex align-items-center"
+                className="col bubble d-flex align-items-center"
                 style={{
                     cursor: "pointer",
                     color: "#1a1a1a",
