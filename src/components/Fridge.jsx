@@ -23,7 +23,6 @@ import { faBacon } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { faAngleDoubleLeft } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
 
 export default class Fridge extends Component {
     chooseFood(name) {
@@ -61,20 +60,16 @@ export default class Fridge extends Component {
         const startingIndex = Math.floor(foodsLength / 2);
         const array1 = foods.slice(0, startingIndex);
         const array2 = foods.slice(startingIndex);
-        let UserBubbleClass = this.props.showUsers
-            ? "row h-50 pb-5"
-            : "row h-25 pb-5";
-        let BubbleSepClass = this.props.showUsers
-            ? "row h-25 py-3"
-            : "row h-50 py-3";
+        let UserBubbleClass = this.props.showUsers ? "row h-50" : "row h-25";
+        let BubbleSepClass = this.props.showUsers ? "row h-25" : "row h-50";
         console.log(this.props.currentPage);
         return (
             <React.Fragment>
                 <div className="row h-100">
-                    <div className="col bubble my-3 ml-3">
+                    <div className="col-12 col-sm-7 col-md-6 col-xl-6 bubble my-3 mx-auto">
                         <div className="row h-25 mt-3">
                             {this.props.temps.map((temp) => (
-                                <div key={temp.name} className="col">
+                                <div key={temp.name} className="col-6">
                                     <Temperature
                                         name={temp.name}
                                         temp={temp.degrees}
@@ -89,8 +84,8 @@ export default class Fridge extends Component {
                             ))}{" "}
                         </div>
                         <hr className="separator mt-0" />
-                        <div className="row h-50 mt-5">
-                            <div className="col d-flex justify-content-center align-items-center">
+                        <div className="row h-50 w-100 mt-5 mx-auto">
+                            <div className="col-12  col-md-2 col-xl-1 order-3  order-md-1 order-xl-1 d-flex justify-content-start justify-content-md-center justify-content-xl-center align-items-center ">
                                 {this.props.currentPage > 1 && (
                                     <FontAwesomeIcon
                                         icon={faAngleDoubleLeft}
@@ -102,33 +97,38 @@ export default class Fridge extends Component {
                                         onClick={() =>
                                             this.props.onPreviousPage()
                                         }
+                                        className="icon"
                                     />
                                 )}{" "}
                             </div>
-                            <div className="col">
+                            <div className="col-6 col-md-4 col-xl-5 order-1  order-md-2 order-xl-2">
                                 {array1.map((food) => (
                                     <React.Fragment key={food.name}>
                                         <div className="row">
                                             <div className="col d-flex justify-content-center">
-                                                <h1>{food.name}</h1>
+                                                <h1 className="textFood">
+                                                    {food.name}
+                                                </h1>
                                             </div>
                                         </div>
                                         <div className="row mb-3">
-                                            <div className="col d-flex justify-content-end">
+                                            <div className="col-7">
                                                 <FontAwesomeIcon
                                                     icon={this.chooseFood(
                                                         food.name
                                                     )}
                                                     size="3x"
+                                                    className="icon"
                                                 />
                                             </div>
-                                            <div className="col d-flex justify-content-start">
+                                            <div className="col-1">
                                                 <h1>
                                                     <img
                                                         src={this.chooseBar(
                                                             food.quantity
                                                         )}
                                                         alt="quantity"
+                                                        className="icon"
                                                     />
                                                 </h1>
                                             </div>
@@ -136,30 +136,34 @@ export default class Fridge extends Component {
                                     </React.Fragment>
                                 ))}{" "}
                             </div>
-                            <div className="col">
+                            <div className="col-6 col-md-4 col-xl-5 order-2  order-md-3 order-xl-3">
                                 {array2.map((food) => (
                                     <React.Fragment key={food.name}>
-                                        <div className="row">
+                                        <div className="row w-100">
                                             <div className="col d-flex justify-content-center">
-                                                <h1>{food.name}</h1>
+                                                <h1 className="textFood">
+                                                    {food.name}
+                                                </h1>
                                             </div>
                                         </div>
                                         <div className="row mb-3 ">
-                                            <div className="col d-flex justify-content-end">
+                                            <div className="col-7">
                                                 <FontAwesomeIcon
                                                     icon={this.chooseFood(
                                                         food.name
                                                     )}
                                                     size="3x"
+                                                    className="icon"
                                                 />
                                             </div>
-                                            <div className="col d-flex justify-content-start">
+                                            <div className="col-1">
                                                 <h1>
                                                     <img
                                                         src={this.chooseBar(
                                                             food.quantity
                                                         )}
                                                         alt="quantity"
+                                                        className="icon"
                                                     />
                                                 </h1>
                                             </div>
@@ -167,7 +171,7 @@ export default class Fridge extends Component {
                                     </React.Fragment>
                                 ))}{" "}
                             </div>
-                            <div className="col d-flex justify-content-center align-items-center">
+                            <div className="col-12  col-md-2 col-xl-1 order-3 order-md-4 order-xl-4 d-flex justify-content-end justify-content-md-center justify-content-xl-center align-items-center">
                                 {this.props.currentPage < pagesCount && (
                                     <FontAwesomeIcon
                                         icon={faAngleDoubleRight}
@@ -177,11 +181,12 @@ export default class Fridge extends Component {
                                             color: "#3c72ff",
                                         }}
                                         onClick={() => this.props.onNextPage()}
+                                        className="icon"
                                     />
                                 )}{" "}
                             </div>
                         </div>
-                        <div className="row row-dots">
+                        <div className="row row-dots mt-5 mt-sm-3 mt-md-3 mt-xl-3">
                             <div className="col d-flex justify-content-center alig-items-center">
                                 <Pagination
                                     pagesCount={pagesCount}
@@ -190,7 +195,7 @@ export default class Fridge extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col mx-3">
+                    <div className="col-12 col-sm-4 col-md-5 col-xl-5 mx-auto">
                         <div className={UserBubbleClass}>
                             <UserBubble
                                 users={this.props.users}
@@ -203,14 +208,14 @@ export default class Fridge extends Component {
                         </div>
                         <div className={BubbleSepClass}>
                             <BubbleSep
-                                desc="Recommended Recipes"
+                                desc="Recipes"
                                 recipes={this.props.recipes}
                                 onClickFavorite={this.props.onClickFavorite}
                                 currentUser={this.props.currentUser}
                                 showUsers={this.props.showUsers}
                             />
                         </div>
-                        <div className="row h-25 pt-5">
+                        <div className="row h-25 ">
                             <Bubble desc="Preferences" icon={faCog} />
                         </div>
                     </div>

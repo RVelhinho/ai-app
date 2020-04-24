@@ -12,6 +12,7 @@ export default function Favorite({ favorite, onClickFavorite }) {
             size="3x"
             onClick={onClickFavorite}
             style={{ cursor: "pointer", color: "#e5ea03" }}
+            className="star_icon"
         />
     );
 }

@@ -7,7 +7,7 @@ export default function OpenClose({ showUsers }) {
     const classes = showUsers ? faSortUp : faSortDown;
     return (
         <React.Fragment>
-            <FontAwesomeIcon icon={classes} size="3x" />
+            <FontAwesomeIcon icon={classes} size="3x" className="icon" />
         </React.Fragment>
     );
 }

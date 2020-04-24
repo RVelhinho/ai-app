@@ -14,6 +14,7 @@ export default function Checkmark({ check, onCheckClick }) {
                 size="6x"
                 onClick={onCheckClick}
                 style={classes}
+                className="icon"
             />
         </React.Fragment>
     );

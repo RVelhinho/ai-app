@@ -26,7 +26,7 @@ export default function MainPage({
         <React.Fragment>
             <div className="container-fluid">
                 <div className="row initial-height">
-                    <div className="col-8">
+                    <div className="col-12 col-md-12 col-xl-8">
                         <Fridge
                             pageSize={pageSize}
                             currentPage={currentPage}

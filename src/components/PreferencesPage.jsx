@@ -21,6 +21,7 @@ export default class PreferencesPage extends Component {
                                         size="6x"
                                         onClick={this.handleLeave}
                                         style={{ cursor: "pointer" }}
+                                        className="icon"
                                     />
                                 </div>
                             </div>
@@ -38,7 +39,6 @@ export default class PreferencesPage extends Component {
                                             onCheckClick={() =>
                                                 this.props.onCheckClick(pref)
                                             }
-                                            style={{ cursor: "pointer" }}
                                         />
                                     </div>
                                 </div>

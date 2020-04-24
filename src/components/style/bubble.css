@@ -25,6 +25,7 @@ ul#menu li {
     height: 100%;
     width: 1%;
     background-color: #3c72ff;
+    display: none;
 }
 
 .row-dots {
@@ -33,4 +34,118 @@ ul#menu li {
 
 .rs {
     height: 230%;
+}
+.text1 {
+    font-size: 3em;
+}
+.textFood {
+    font-size: 1.5em;
+}
+
+.textRecipe {
+    font-size: 1.5em;
+}
+.icon_temp {
+    height: 4vh;
+}
+
+.number1 {
+    font-size: 3.8em;
+}
+
+@media (min-width: 576px) {
+    .text1 {
+        font-size: 1.3em;
+    }
+    .text2 {
+        font-size: 1.5em;
+    }
+
+    .textRecipe {
+        font-size: 1em;
+    }
+
+    .icon {
+        height: 5vh;
+    }
+    .icon_temp {
+        height: 4vh;
+    }
+    .star_icon {
+        height: 4vh;
+    }
+}
+
+@media (min-width: 768px) {
+    .text1 {
+        font-size: 1.5em;
+    }
+    .text2 {
+        font-size: 1.5em;
+    }
+
+    .textRecipe {
+        font-size: 1em;
+    }
+
+    .icon {
+        height: 7vh;
+    }
+    .icon_temp {
+        height: 4vh;
+    }
+    .star_icon {
+        height: 4vh;
+    }
+}
+
+@media (min-width: 992px) {
+    .text1 {
+        font-size: 1.5em;
+    }
+    .text2 {
+        font-size: 1.5em;
+    }
+
+    .textRecipe {
+        font-size: 1em;
+    }
+
+    .icon {
+        height: 7vh;
+    }
+    .icon_temp {
+        height: 4vh;
+    }
+    .star_icon {
+        height: 4vh;
+    }
+}
+
+@media (min-width: 1200px) {
+    .text1 {
+        font-size: 2em;
+    }
+    .text2 {
+        font-size: 1.5em;
+    }
+    .textFood {
+        font-size: 2em;
+    }
+
+    .textRecipe {
+        font-size: 1.2em;
+    }
+    .icon {
+        height: 7vh;
+    }
+    .icon_temp {
+        height: 4vh;
+    }
+    .star_icon {
+        height: 4vh;
+    }
+    .divider {
+        display: block;
+    }
 }

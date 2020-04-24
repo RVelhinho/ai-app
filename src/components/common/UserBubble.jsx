@@ -16,17 +16,21 @@ export default function UserBubble({
     usersOld.splice(currentUserIndex, 1);
     return (
         <React.Fragment>
-            <div className="col bubble my-3">
+            <div className="col bubble mb-5 mb-sm-3 mb-md-3 mb-xl-3 mt-3 ">
                 <div
-                    className="row w-100 pl-4 my-5 "
+                    className="row w-100 pl-4 py-2 pt-sm-4 pt-md-5 pt-xl-5 mb-3"
                     onClick={onShowUsers}
                     style={{ cursor: "pointer" }}
                 >
-                    <div className="col-8 d-flex align-items-center justify-content-start">
-                        <h1 className="display-4">{currentUser}</h1>
+                    <div className="col-12 col-md-8 col-xl-8 d-flex align-items-center justify-content-center justify-content-md-start justify-content-xl-start ">
+                        <h1 className="text1">{currentUser}</h1>
                     </div>
-                    <div className="col d-flex align-items-center justify-content-end">
-                        <FontAwesomeIcon icon={faUser} size="5x" />
+                    <div className="col-12 col-md-4 col-xl-4 d-flex align-items-center justify-content-center justify-content-md-end justify-content-xl-end">
+                        <FontAwesomeIcon
+                            icon={faUser}
+                            size="5x"
+                            className="icon"
+                        />
                         <OpenClose showUsers={showUsers} />
                     </div>
                 </div>
@@ -40,7 +44,7 @@ export default function UserBubble({
                                 style={{ cursor: "pointer" }}
                             >
                                 <div className="col-8 d-flex align-items-center justify-content-start">
-                                    <h1 className="display-4">{user.name}</h1>
+                                    <h1 className="text1">{user.name}</h1>
                                 </div>
                             </div>
                         </React.Fragment>

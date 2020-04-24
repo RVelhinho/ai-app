@@ -7,45 +7,38 @@ export default class BubbleSep extends Component {
     render() {
         return (
             <React.Fragment>
-                <div className="col bubble">
-                    <div className="row">
-                        <div className="col my-3 d-flex align-items-center justify-content-between">
-                            <div className="row w-100 pl-4">
-                                <div className="col-8 d-flex align-items-center justify-content-start">
-                                    <h1 className="display-4">
-                                        {this.props.desc}
-                                    </h1>
-                                </div>
-                                <div className="col d-flex align-items-center justify-content-end">
-                                    <FontAwesomeIcon icon={faBook} size="5x" />
-                                </div>
-                            </div>
+                <div className="col bubble my-4">
+                    <div className="row w-100 h-25 pl-4 py-3">
+                        <div className="col-7 col-xl-8 d-flex align-items-center justify-content-start justify-content-sm-center">
+                            <h1 className="text1">{this.props.desc}</h1>
+                        </div>
+                        <div className="col-5 col-xl-4 d-flex align-items-center justify-content-end justify-content-sm-center">
+                            <FontAwesomeIcon
+                                icon={faBook}
+                                size="5x"
+                                className="icon"
+                            />
                         </div>
                     </div>
                     {!this.props.showUsers && <hr className="my-3 separator" />}
-                    {!this.props.showUsers && (
-                        <div className="row">
-                            <div className="col">
-                                {this.props.recipes.map((recipe) => (
-                                    <div key={recipe.name} className="row">
-                                        <div className="col d-flex justify-content-start align-items-center pl-5">
-                                            <h5>{recipe.name}</h5>
-                                        </div>
-                                        <div className="col d-flex justify-content-end align-items-center pr-5">
-                                            <Favorite
-                                                favorite={recipe.favorite}
-                                                onClickFavorite={() =>
-                                                    this.props.onClickFavorite(
-                                                        recipe
-                                                    )
-                                                }
-                                            />
-                                        </div>
-                                    </div>
-                                ))}
+                    {!this.props.showUsers &&
+                        this.props.recipes.map((recipe) => (
+                            <div key={recipe.name} className="row">
+                                <div className="col-6 d-flex justify-content-start align-items-center pl-md-5 pl-lg-5">
+                                    <h5 className="textRecipe">
+                                        {recipe.name}
+                                    </h5>
+                                </div>
+                                <div className="col d-flex justify-content-end align-items-center pr-md-5 pr-lg-5">
+                                    <Favorite
+                                        favorite={recipe.favorite}
+                                        onClickFavorite={() =>
+                                            this.props.onClickFavorite(recipe)
+                                        }
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    )}
+                        ))}
                 </div>
             </React.Fragment>
         );

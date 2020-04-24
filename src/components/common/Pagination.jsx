@@ -19,8 +19,9 @@ export default class Pagination extends Component {
                     <FontAwesomeIcon
                         key={item}
                         icon={faCircle}
-                        size="3x"
+                        size="2x"
                         style={this.chooseColor(item)}
+                        className="icon"
                     />
                 ))}
             </React.Fragment>
