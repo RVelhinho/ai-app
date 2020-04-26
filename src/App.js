@@ -25,6 +25,7 @@ export default class App extends Component {
     currentUserIndex: 0,
     showUsers: false,
     voiceCommands: [],
+    recipesUpdating: [],
   };
 
   componentDidMount() {
@@ -51,6 +52,7 @@ export default class App extends Component {
       currentUser,
       currentUserIndex,
       voiceCommands,
+      recipesUpdating: recipes,
     });
   }
 
@@ -94,12 +96,17 @@ export default class App extends Component {
         currentUserIndex = this.state.recipesOriginal.indexOf(user);
       }
     }
+    const recipesUpdating = [...this.state.recipesUpdating];
+    const oldUserIndex = this.state.currentUserIndex;
+    recipesUpdating[oldUserIndex].recipes = this.state.recipes;
+
     console.log("current index", currentUserIndex);
     this.setState({
       currentUser,
       currentUserIndex,
-      recipes: this.state.recipesOriginal[currentUserIndex].recipes,
+      recipes: this.state.recipesUpdating[currentUserIndex].recipes,
       showUsers: !this.state.showUsers,
+      recipesUpdating,
     });
   };
   handleNextPage = () => {
