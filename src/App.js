@@ -26,6 +26,7 @@ export default class App extends Component {
     showUsers: false,
     voiceCommands: [],
     recipesUpdating: [],
+    preferencesByUser: [],
   };
 
   componentDidMount() {
@@ -100,6 +101,38 @@ export default class App extends Component {
     const oldUserIndex = this.state.currentUserIndex;
     recipesUpdating[oldUserIndex].recipes = this.state.recipes;
 
+    const oldPreferences = this.state.preferences;
+    const preferencesByUser = [...this.state.preferencesByUser];
+    const oldPreferencesInfo = {
+      name: this.state.currentUser,
+      preferences: oldPreferences,
+    };
+    let found = false;
+    let prefOldIndex;
+    for (let user of preferencesByUser) {
+      if (user.name === oldPreferencesInfo.name) {
+        prefOldIndex = preferencesByUser.indexOf(user);
+        found = true;
+      }
+    }
+    if (found) {
+      preferencesByUser[prefOldIndex] = oldPreferencesInfo;
+    } else {
+      preferencesByUser.push(oldPreferencesInfo);
+    }
+
+    found = false;
+    let prefCurIndex;
+    for (let user of preferencesByUser) {
+      if (user.name === currentUser) {
+        prefCurIndex = preferencesByUser.indexOf(user);
+        found = true;
+      }
+    }
+    let preferences = found
+      ? preferencesByUser[prefCurIndex].preferences
+      : getPreferences();
+
     console.log("current index", currentUserIndex);
     this.setState({
       currentUser,
@@ -107,6 +140,8 @@ export default class App extends Component {
       recipes: this.state.recipesUpdating[currentUserIndex].recipes,
       showUsers: !this.state.showUsers,
       recipesUpdating,
+      preferencesByUser,
+      preferences,
     });
   };
   handleNextPage = () => {
