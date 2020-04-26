@@ -18,9 +18,11 @@ export default class Simulator extends Component {
               <img src={mic} alt="mic" />
             </div>
           </Link>
-          <div className="col d-flex justify-content-center">
-            <img src={door} alt="door" />
-          </div>
+          <Link to="/open" className="col d-flex">
+            <div className="col d-flex justify-content-center">
+              <img src={door} alt="door" />
+            </div>
+          </Link>
         </div>
       </React.Fragment>
     );
