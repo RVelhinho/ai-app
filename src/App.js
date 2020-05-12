@@ -37,6 +37,7 @@ export default class App extends Component {
     const users = getUsers();
     const preferences = getPreferences();
     const voiceCommands = getVoiceCommands();
+    const origfoods = [...foods];
     let currentUser = users[0].name;
     let currentUserIndex = 0;
     for (let user of recipes) {
@@ -55,6 +56,7 @@ export default class App extends Component {
       currentUserIndex,
       voiceCommands,
       recipesUpdating: recipes,
+      origfoods,
     });
   }
 
@@ -84,6 +86,10 @@ export default class App extends Component {
     };
     temps[index].degrees--;
     this.setState({ temps });
+  };
+  handleUpdateOrigFoods = () => {
+    const origfoods = [...this.state.foods];
+    this.setState({ origfoods });
   };
   handleShowUsers = () => {
     const showUsers = !this.state.showUsers;
@@ -231,6 +237,9 @@ export default class App extends Component {
               <OpenPage
                 onPlusClick={this.handlePlusFood}
                 onMinusClick={this.handleMinusFood}
+                updateOrigFoods={this.handleUpdateOrigFoods}
+                inventory={this.state.foods}
+                orig={this.state.origfoods}
                 {...props}
               />
             )}
