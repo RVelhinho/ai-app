@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faGraduationCap,
+} from "@fortawesome/free-solid-svg-icons";
 import { faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faMinusCircle } from "@fortawesome/free-solid-svg-icons";
 import { faFish } from "@fortawesome/free-solid-svg-icons";
 import { faCheese } from "@fortawesome/free-solid-svg-icons";
 import { faBacon } from "@fortawesome/free-solid-svg-icons";
-
+import Fridge from "./Fridge";
 class OpenPage extends Component {
   handleLeave = () => {
     this.props.history.push("/");
@@ -20,6 +23,14 @@ class OpenPage extends Component {
       { name: "Cheese", icon: faCheese },
     ],
     r: JSON.parse(JSON.stringify(this.props.inventory)),
+  };
+  openFridgeText = {
+    color: "white",
+    position: "absolute",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    textAlign: "center",
+    whiteSpace: "nowrap",
   };
   createPlusMinusIcons(icon) {
     let final = icon === "+" ? faPlusCircle : faMinusCircle;
@@ -67,7 +78,7 @@ class OpenPage extends Component {
     this.state.foods.map((food, index) =>
       rows.push(
         <div key={index} className="row">
-          <div className="col d-flex">
+          <div className="col d-flex ml-2">
             <FontAwesomeIcon
               icon={food.icon}
               size="3x"
@@ -103,8 +114,8 @@ class OpenPage extends Component {
     let diff = curQuantity - origQuantity;
     // let diff = inventoryQ - inventoryO;
     return diff === 0 ? "No change" : diff > 0 ? "+" + diff : diff;
-    return "pila";
   }
+  //filter: "grayscale(50%)",
   render() {
     console.log("crl", this.props.orig, this.props.inventory);
     return (
@@ -118,12 +129,52 @@ class OpenPage extends Component {
                     icon={faArrowLeft}
                     size="6x"
                     onClick={this.handleLeave}
-                    style={{ cursor: "pointer" }}
+                    style={{ cursor: "pointer", color: "white" }}
                     className="icon"
                   />
                 </div>
               </div>
             </div>
+            <div
+              className="col-12 col-md-12 col-xl-8"
+              style={{
+                position: "absolute",
+                zIndex: -1,
+                opacity: 1,
+                backgroundColor: "	#383838",
+                filter: "grayscale(80%)",
+              }}
+            >
+              <Fridge
+                pageSize={this.props.pageSize}
+                currentPage={this.props.currentPage}
+                temps={this.props.temps}
+                foods={this.props.foods}
+                recipes={this.props.recipes}
+                users={this.props.users}
+                currentUser={this.props.currentUser}
+                currentUserIndex={this.props.currentUserIndex}
+                showUsers={this.props.showUsers}
+                foodsLength={this.props.foodsLength}
+              />
+              <h1
+                style={{
+                  ...this.openFridgeText,
+                  ...{ fontSize: "400%", top: "25%" },
+                }}
+              >
+                Fridge door open!
+              </h1>
+              <h1
+                style={{
+                  ...this.openFridgeText,
+                  ...{ fontSize: "300%", top: "45%" },
+                }}
+              >
+                Don't let the cool air get outside
+              </h1>
+            </div>
+
             <div className="divider"></div>
             <div className="col">
               <div className="row ">{this.createPlusMinusIcons("+")}</div>

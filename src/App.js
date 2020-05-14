@@ -11,6 +11,7 @@ import { getPreferences } from "./services/fakePreferenceService";
 import ListeningPage from "./components/ListeningPage";
 import { getVoiceCommands } from "./services/voiceCommands";
 import OpenPage from "./components/OpenPage";
+import BlockedPage from "./components/BlockedPage";
 
 export default class App extends Component {
   state = {
@@ -212,6 +213,21 @@ export default class App extends Component {
       <React.Fragment>
         <Switch>
           <Route
+            path="/blocked"
+            render={(props) => (
+              <BlockedPage
+                temps={this.state.temps}
+                users={this.state.users}
+                currentUser={this.state.currentUser}
+                currentUserIndex={this.state.currentUserIndex}
+                showUsers={this.state.showUsers}
+                onShowUsers={this.handleShowUsers}
+                onChangeUser={this.handleChangeUser}
+                {...props}
+              />
+            )}
+          />
+          <Route
             path="/preferences"
             render={(props) => (
               <PreferencesPage
@@ -240,6 +256,16 @@ export default class App extends Component {
                 updateOrigFoods={this.handleUpdateOrigFoods}
                 inventory={this.state.foods}
                 orig={this.state.origfoods}
+                pageSize={this.state.pageSize}
+                currentPage={this.state.currentPage}
+                temps={this.state.temps}
+                foods={this.state.foods}
+                recipes={this.state.recipes}
+                users={this.state.users}
+                currentUser={this.state.currentUser}
+                currentUserIndex={this.state.currentUserIndex}
+                showUsers={this.state.showUsers}
+                foodsLength={this.state.foods.length}
                 {...props}
               />
             )}
