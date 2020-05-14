@@ -2,6 +2,14 @@
     height: 100vh;
 }
 
+.initial-height2 {
+    height: 300vh;
+}
+
+.timeDisplay {
+    font-size: 1000%;
+}
+
 .bubble {
     border: 2px solid #3c72ff;
     border-radius: 50px;
@@ -49,8 +57,22 @@ ul#menu li {
     height: 4vh;
 }
 
+.icon_temp2 {
+    height: 5vh;
+}
+
 .number1 {
     font-size: 3.8em;
+}
+
+.number2 {
+    font-size: 3em;
+}
+.text3 {
+    font-size: 1.5em;
+}
+.text4 {
+    font-size: 2em;
 }
 
 @media (min-width: 576px) {
@@ -59,6 +81,22 @@ ul#menu li {
     }
     .text2 {
         font-size: 1.5em;
+    }
+
+    .text3 {
+        font-size: 1.5em;
+    }
+
+    .text4 {
+        font-size: 2em;
+    }
+
+    .icon_temp2 {
+        height: 5vh;
+    }
+
+    .number2 {
+        font-size: 4em;
     }
 
     .textRecipe {
@@ -82,6 +120,21 @@ ul#menu li {
     }
     .text2 {
         font-size: 1.5em;
+    }
+    .text3 {
+        font-size: 2em;
+    }
+
+    .text4 {
+        font-size: 2em;
+    }
+
+    .number2 {
+        font-size: 5em;
+    }
+
+    .icon_temp2 {
+        height: 6vh;
     }
 
     .textRecipe {
@@ -107,6 +160,22 @@ ul#menu li {
         font-size: 1.5em;
     }
 
+    .text3 {
+        font-size: 2em;
+    }
+
+    .text4 {
+        font-size: 2em;
+    }
+
+    .number2 {
+        font-size: 5em;
+    }
+
+    .icon_temp2 {
+        height: 6vh;
+    }
+
     .textRecipe {
         font-size: 1em;
     }
@@ -129,6 +198,22 @@ ul#menu li {
     .text2 {
         font-size: 1.5em;
     }
+    .text3 {
+        font-size: 2em;
+    }
+
+    .text4 {
+        font-size: 2em;
+    }
+
+    .number2 {
+        font-size: 6em;
+    }
+
+    .icon_temp2 {
+        height: 7vh;
+    }
+
     .textFood {
         font-size: 2em;
     }
