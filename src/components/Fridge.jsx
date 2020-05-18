@@ -38,7 +38,7 @@ export default class Fridge extends Component {
         return faPizzaSlice;
     }
     chooseBar(quantity) {
-        if (quantity === 10) return full_bar;
+        if (quantity >= 10) return full_bar;
         else if (quantity < 10 && quantity >= 5) return almost_full_bar;
         else if (quantity < 5 && quantity >= 2) return almost_empty_bar;
 
