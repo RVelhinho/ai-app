@@ -4,13 +4,7 @@ With the fast and exponentially growing technology that surrounds us, it's inevi
 
 ## Getting Started
 
-```
-Install Node.js and Node Package Manager (npm) through the following link: https://nodejs.org/en/
-```
-
-```
-Open terminal and install the react library with the following command: npm i create-react-app
-```
+By following these instructions, you will be able to run and test the project above.
 
 ### Prerequisites
 
